@@ -1,22 +1,7 @@
-// import prisma from '@/lib/prisma';
-// import PostList from '@/components/PostList';
+import PostList from './components/Post/PostList';
 
 
 export default async function Home() {
-
-  const posts = await prisma.post.findMany({
-    where: { published: true },
-    orderBy: { createdAt: 'desc' },
-    take: 5, // show latest 5 posts
-  });
-
-  // const posts = [
-  //   { id: 1, title: "Understanding Next.js 13", excerpt: "An introduction to the new features in Next.js 13.", publishedAt: "2024-06-01" },
-  //   { id: 2, title: "JavaScript ES2024 Features", excerpt: "A look at the latest features added to JavaScript in 2024.", publishedAt: "2024-05-28" },
-  //   { id: 3, title: "CSS Grid vs Flexbox", excerpt: "When to use CSS Grid and when to use Flexbox in your layouts.", publishedAt: "2024-05-20" },
-  //   { id: 4, title: "TypeScript Tips and Tricks", excerpt: "Enhance your TypeScript skills with these useful tips.", publishedAt: "2024-05-15" },
-  //   { id: 5, title: "Building Accessible Web Apps", excerpt: "Best practices for creating accessible web applications.", publishedAt: "2024-05-10" },
-  // ];
 
   return (
     <section className="space-y-12">
@@ -30,7 +15,7 @@ export default async function Home() {
       {/* Latest Posts Section */}
       <div>
         <h3 className="text-2xl font-semibold mb-4">Latest Posts</h3>
-        {/* <PostList posts={posts} /> */}
+        <PostList />
       </div>
 
 

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import ErrorBoundary from "./components/ErrorBoundary";
+import Header from "./components/Layout/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -103,10 +105,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gray-50 text-gray-900`}>
-        <header className="max-w-4xl mx-auto p-6">
-          <h1 className="text-3xl font-bold">TechPulse</h1>
-        </header>
-        <main className="max-w-4xl mx-auto p-6">{children}</main>
+        <Header />
+        <main className="max-w-4xl mx-auto p-6 h-full">
+          {/* <ErrorBoundary> */}
+            {children}
+          {/* </ErrorBoundary> */}
+        </main>
         <footer className="max-w-4xl mx-auto p-6 text-center text-sm text-gray-500">
           &copy; {new Date().getFullYear()} TechPulse. All rights reserved.
         </footer>
