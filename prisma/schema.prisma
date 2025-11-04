@@ -6,12 +6,20 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  output = "../app/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  posts Post[]
 }
 
 model Post {
@@ -20,7 +28,9 @@ model Post {
     slug String @unique
     content String @db.Text
     excerpt String?
+    authorId  Int
     published Boolean @default(false)
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+    author    User    @relation(fields: [authorId], references: [id])
 }

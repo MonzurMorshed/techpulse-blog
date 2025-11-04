@@ -14,7 +14,7 @@ export default async function Home() {
 
       {/* Latest Posts Section */}
       <div>
-        <h3 className="text-2xl font-semibold mb-4">Latest Posts</h3>
+        {/* <h3 className="text-2xl font-semibold mb-4">Latest Posts</h3> */}
         <PostList />
       </div>
 
