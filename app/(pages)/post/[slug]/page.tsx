@@ -1,4 +1,4 @@
-import PostList from './components/Post/PostList';
+import PostDetails from '@/app/components/Post/Details/PostDetails';
 
 
 export default async function Home() {
@@ -10,11 +10,15 @@ export default async function Home() {
         <h2 className="text-4xl font-bold mb-2">Welcome to TechPulse</h2>
         <p className="text-lg">Explore the latest articles on tech, coding, and lifestyle. Stay informed and inspired!</p>
       </div>
+
+
       {/* Latest Posts Section */}
       <div>
-        {/* <h3 className="text-2xl font-semibold mb-4">Latest Posts</h3> */}
-        <PostList />
+        <PostDetails />
       </div>
+
+
+      
     </section>
   );
 }

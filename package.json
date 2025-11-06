@@ -11,10 +11,9 @@
     "prisma:generate": "prisma generate",
     "prisma:db:push": "prisma db push",
     "prisma:migrate": "prisma migrate dev",
-    "seed": "ts-node-esm prisma/seed.ts"
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^6.18.0",
     "@prisma/extension-accelerate": "^2.0.2",
     "dotenv": "^17.2.3",
     "next": "16.0.1",
@@ -23,13 +22,14 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@prisma/client": "^6.19.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
-    "prisma": "^6.18.0",
+    "prisma": "^6.19.0",
     "tailwindcss": "^4",
     "ts-node": "^10.9.1",
     "tsx": "^4.20.6",

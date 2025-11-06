@@ -58,7 +58,7 @@ export default function PostList() {
         {posts.map((post) => (
           <a
             key={post.id}
-            href={`/blog/${post.slug}`}
+            href={`/post/${post.slug}`}
             className="block border border-gray-200 rounded-lg p-5 hover:shadow-md transition"
           >
             <h3 className="text-xl font-semibold text-gray-800 mb-2">{post.title}</h3>

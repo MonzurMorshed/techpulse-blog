@@ -108,8 +108,19 @@ export default function RootLayout({
         <Header />
         <main className="max-w-4xl mx-auto p-6 h-full">
           {/* <ErrorBoundary> */}
-            {children}
+          {children}
           {/* </ErrorBoundary> */}
+          <>
+            {/* Optional call-to-action / newsletter section */}
+            <div className="bg-gray-100 p-6 rounded-lg text-center">
+              <h4 className="text-xl font-semibold mb-2">Subscribe to Our Newsletter</h4>
+              <p className="mb-4">Get notified when we publish new articles.</p>
+              <form className="flex flex-col sm:flex-row justify-center gap-2">
+                <input type="email" placeholder="Your email" className="p-2 border rounded w-full sm:w-auto" />
+                <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">Subscribe</button>
+              </form>
+            </div>
+          </>
         </main>
         <footer className="max-w-4xl mx-auto p-6 text-center text-sm text-gray-500">
           &copy; {new Date().getFullYear()} TechPulse. All rights reserved.
