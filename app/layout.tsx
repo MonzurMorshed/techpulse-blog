@@ -106,7 +106,7 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gray-50 text-gray-900`}>
         <Header />
-        <main className="max-w-4xl mx-auto p-6 h-full">
+        <main className="max-w-5xl mx-auto p-6 h-full">
           {/* <ErrorBoundary> */}
           {children}
           {/* </ErrorBoundary> */}

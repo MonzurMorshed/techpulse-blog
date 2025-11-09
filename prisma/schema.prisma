@@ -22,15 +22,24 @@ model User {
   posts Post[]
 }
 
+model PostCategory {
+    id Int @id @default(autoincrement())
+    name String 
+    slug String @unique
+    posts Post[]
+}
+
 model Post {
     id Int @id @default(autoincrement())
     title String
     slug String @unique
     content String @db.Text
     excerpt String?
+    categoryId Int
     authorId  Int
-    published Boolean @default(false)
+    publishedAt Boolean @default(false)
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     author    User    @relation(fields: [authorId], references: [id])
+    category PostCategory @relation(fields: [categoryId], references: [id])
 }
